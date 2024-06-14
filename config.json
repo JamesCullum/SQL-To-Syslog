@@ -1,0 +1,16 @@
+{
+  "timezone": "Europe/Berlin",
+  "syslog": {
+    "host": "10.12.13.14:514",
+    "prot": "udp"
+  },
+  "database": "server=10.11.12.13",
+  "jobs": [
+    {
+      "name": "Example_DB.AccessLog",
+      "cronWithLeadingSecond": "0 * * * * *",
+      "query": "USE Example_DB; SELECT id, timestamp, userId, application, action, clientIP, serverName, method, requestURI, params, duration, error FROM AccessLog WHERE (timestamp AT TIME ZONE 'Central European Standard Time') > :lastCheck ORDER BY timestamp ASC",
+      "initialLastCheckOffsetMin": 5
+    }
+  ]
+}
