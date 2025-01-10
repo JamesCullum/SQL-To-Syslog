@@ -32,4 +32,4 @@ The configuration with an example is contained in the config.json. If you want t
 
 # Sponsors
 
-[![CRIF GmbH](https://www.crif.de/media/2447/crif_tagline.jpg)](https://careers.crif.com/search/?optionsFacetsDD_country=DE)
+[![CRIF GmbH](https://www.crif.de/assets/img/logo-crif.svg)](https://careers.crif.com/search/?optionsFacetsDD_country=DE)
