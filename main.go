@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"log"
+	"strings"
 	"time"
 
 	"os"
@@ -60,7 +61,12 @@ func main() {
 	}
 
 	// Init Syslog
-	sysw, err = syslog.Dial(config.Syslog.Prot, config.Syslog.Host, syslog.LOG_WARNING, "mssql-to-syslog")
+	if strings.Contains(config.Syslog.Prot, "tls") {
+		sysw, err = syslog.DialWithTLSCertPath(config.Syslog.Prot, config.Syslog.Host, syslog.LOG_WARNING, "mssql-to-syslog", config.Syslog.CertFile)
+	} else {
+		sysw, err = syslog.Dial(config.Syslog.Prot, config.Syslog.Host, syslog.LOG_WARNING, "mssql-to-syslog")
+	}
+	
 	if err != nil {
 		log.Fatal("Failed to connect to syslog", err)
 	}

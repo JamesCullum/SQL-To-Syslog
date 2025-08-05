@@ -7,6 +7,7 @@ type Config struct {
 	Syslog   struct {
 		Host string `json:"host"`
 		Prot string `json:"prot"`
+		CertFile string `json:"certFile,omitempty"`
 	} `json:"syslog"`
 	Database string      `json:"database"`
 	Jobs     []ConfigJob `json:"jobs"`

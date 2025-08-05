@@ -2,7 +2,8 @@
   "timezone": "Europe/Berlin",
   "syslog": {
     "host": "10.12.13.14:514",
-    "prot": "udp"
+    "prot": "tcp+tls",
+    "certFile": "/etc/ssl/certs/ca-certificates.crt"
   },
   "database": "server=10.11.12.13",
   "jobs": [
