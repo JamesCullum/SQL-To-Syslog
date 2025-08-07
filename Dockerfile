@@ -18,5 +18,6 @@ RUN mkdir -p /app && chmod -R 777 /app && \
 WORKDIR /app
 
 COPY --from=build-stage /sql2syslog /app/sql2syslog
+COPY config.json /app/config.json
 
 ENTRYPOINT ["/app/sql2syslog"]
