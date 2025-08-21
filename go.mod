@@ -1,4 +1,4 @@
-module github.com/JamesCullum/SQL-To-Syslog
+module github.com/sys-ops/SQL-To-Syslog
 
 go 1.22.3
 
